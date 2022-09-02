@@ -1,49 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Interactive rating component</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="./style.css" />
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
+    <title>Frontend Mentor | Interactive rating component</title>
 
-  <!-- Rating state start -->
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style></style>
+  </head>
+  <body style="background-color: hsl(216, 12%, 8%)">
+    <!-- Rating state start -->
+    <div class="container" id="ratingselection">
+      <div class="starimage">
+        <img
+          width="15px"
+          height="15px"
+          src="./images/icon-star.svg"
+          alt="star"
+        />
+      </div>
 
-  How did we do?
+      <h3 class="largetext">How did we do?</h3>
+      <p class="smalltext">
+        Please let us know how we did with your support request. All feedback is
+        appreciated to help us improve our offering!
+      </p>
+      <div class="ratingbuttons" id="rating">
+        <button>1</button>
+        <button>2</button>
+        <button>3</button>
+        <button>4</button>
+        <button>5</button>
+      </div>
+      <button class="submit" id="submit">Submit</button>
+    </div>
 
-  Please let us know how we did with your support request. All feedback is appreciated 
-  to help us improve our offering!
+    <!-- Rating state end -->
 
-  1 2 3 4 5
+    <!-- Thank you state start -->
+    <div style="display: none" id="thankyou" class="container center">
+      <div>
+        <img
+          class="phoneimg"
+          src="./images/illustration-thank-you.svg"
+          alt="computerimg"
+        />
+      </div>
+      <div class="uppertext">
+        You selected
+        <span id="therating"></span>
+        out of 5
+      </div>
+      <h3>Thank you!</h3>
+      <p>
+        We appreciate you taking the time to give a rating. If you ever need
+        more support, don’t hesitate to get in touch!
+      </p>
+    </div>
 
-  Submit
+    <!-- Thank you state end -->
 
-  <!-- Rating state end -->
-
-  <!-- Thank you state start -->
-
-  You selected <!-- Add rating here --> out of 5
-
-  Thank you!
-
-  We appreciate you taking the time to give a rating. If you ever need more support, 
-  don’t hesitate to get in touch!
-
-  <!-- Thank you state end -->
-
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-</body>
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="#">Dominic</a>.
+    </div>
+  </body>
+  <script>
+    console.log(document.getElementById("rating").children);
+    let buttons = document.getElementById("rating").children;
+    for (let i = 0; i < buttons.length; i++) {
+      buttons[i].addEventListener("click", (e) => {
+        for (let j = 0; j < buttons.length; j++) {
+          buttons[j].className = "";
+        }
+        e.target.className = "selected";
+        console.log("e", e);
+      });
+    }
+    let submitbtn = document.getElementById("submit");
+    submitbtn.addEventListener("click", (e) => {
+      if (document.getElementsByClassName("selected").length) {
+        document.getElementById("ratingselection").style.display = "none";
+        document.getElementById("thankyou").style.display = "block";
+        document.getElementById("therating").innerText =
+          document.getElementsByClassName("selected")[0].innerText;
+      }
+    });
+  </script>
 </html>

@@ -1,0 +1,94 @@
+@import url("https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap");
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  color: white;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+.container {
+  background-color: hsl(213, 19%, 18%);
+  padding: 20px;
+  margin: auto;
+  max-width: 300px;
+  border-radius: 20px;
+  margin-top: 200px;
+  font-family: "Overpass", sans-serif;
+}
+.starimage {
+  padding: 10px;
+  background-color: hsl(217, 23%, 26%);
+  border-radius: 100px;
+  display: flex;
+  width: 17px;
+  height: 17px;
+  justify-content: center;
+  align-items: center;
+}
+h3 {
+  color: white;
+}
+p {
+  color: hsl(217, 12%, 63%);
+  font-size: 15px;
+}
+.ratingbuttons {
+  display: flex;
+  justify-content: space-between;
+}
+button {
+  padding: 10px;
+  background-color: hsl(217, 23%, 26%);
+  border-radius: 100px;
+  display: flex;
+  width: 40px;
+  height: 40px;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  color: hsl(217, 12%, 63%);
+}
+button:hover {
+  background-color: hsl(217, 12%, 63%);
+  cursor: pointer;
+  color: white;
+}
+button:active {
+  background-color: #fc7614;
+}
+.submit {
+  background-color: #fc7614;
+  display: flex;
+  width: 100%;
+  color: white;
+  margin-top: 10px;
+}
+.submit:hover {
+  background-color: #fb9043;
+}
+.selected {
+  background-color: #fc7614;
+  color: white;
+}
+.selected:hover {
+  background-color: #fc7614;
+  color: white;
+}
+.uppertext {
+  color: #fc7614;
+  padding: 8px 10px 5px 10px;
+  background-color: hsl(217, 23%, 26%);
+  border-radius: 100px;
+  justify-content: center;
+  align-items: center;
+  display: inline;
+  font-size: 15px;
+}
+.phoneimg {
+  padding: 30px;
+}
+.center {
+  text-align: center;
+}
